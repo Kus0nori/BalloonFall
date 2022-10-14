@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class BalloonController : MonoBehaviour
@@ -10,7 +9,7 @@ public class BalloonController : MonoBehaviour
     private ScoreSystem _scoreSystem;
     private void Start()
     {
-        var scoreGameObject = GameObject.Find("Score");
+        var scoreGameObject = GameObject.Find("GameManager");
         _scoreSystem = scoreGameObject.GetComponent<ScoreSystem>();
         _balloonScale = transform.localScale.x;
         _balloonRadius = _balloonScale / 2;
@@ -20,8 +19,8 @@ public class BalloonController : MonoBehaviour
     
     private void Update()
     {
-        transform.Translate(Vector3.down * (Time.deltaTime * _fallingSpeed));
-        if (transform.position.y + _balloonRadius < -_screenBounds.y || !UIController.GameIsActive)
+        transform.Translate(Vector3.down * (Time.deltaTime * _fallingSpeed * ScoreSystem.CurrentLevel));
+        if (transform.position.y + _balloonRadius < -_screenBounds.y || !GameManager.GameIsActive)
         {
             Destroy(gameObject);
         }

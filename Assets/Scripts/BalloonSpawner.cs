@@ -19,12 +19,12 @@ public class BalloonSpawner : MonoBehaviour
     private IEnumerator CreateBalloon()
     {
         yield return new WaitForSeconds(1f);
-        while (UIController.GameIsActive)
+        while (GameManager.GameIsActive)
         {
             _balloonScale = Random.Range(0.5f, 2f);
             _balloonRadius = _balloonScale / 2;
             _spawnXAxis = Random.Range(-_screenBounds.x+_balloonRadius, _screenBounds.x-_balloonRadius);
-            _spawnRate = Random.Range(0.5f, 2f);
+            _spawnRate = Random.Range(0.5f/ScoreSystem.CurrentLevel, 2f/ScoreSystem.CurrentLevel);
             _currBalloon = Instantiate(balloonPrefab, new Vector3(_spawnXAxis, _screenBounds.y+1f, 1f), Quaternion.identity);
             _currBalloon.transform.localScale = new Vector3(_balloonScale, _balloonScale, 1f);
             _currBalloon.GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);

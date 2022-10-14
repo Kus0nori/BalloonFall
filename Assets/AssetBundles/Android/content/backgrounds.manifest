@@ -1,0 +1,24 @@
+ManifestFileVersion: 0
+CRC: 150413346
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 296665681b3c27fe18693822eed34772
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c21d61fe394c58399df3c6fb5c7c99b3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/Backgrounds/snowymountains.png
+- Assets/Resources/Backgrounds/foggy.png
+- Assets/Resources/Backgrounds/cityskyline.png
+- Assets/Resources/Backgrounds/bluemoon.png
+- Assets/Resources/Backgrounds/sunnyday.png
+- Assets/Resources/Backgrounds/graveyard.png
+Dependencies: []

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class UIController : MonoBehaviour
 {
@@ -7,7 +6,6 @@ public class UIController : MonoBehaviour
     public GameObject stopButton;
     public GameObject score;
     public GameObject timer;
-    public static bool GameIsActive;
     
     public void StartGame()
     {
@@ -16,16 +14,17 @@ public class UIController : MonoBehaviour
         timer.SetActive(true);
         stopButton.SetActive(true);
         Time.timeScale = 1f;
-        GameIsActive = true;
+        GameManager.GameIsActive = true;
     }
 
     public void StopGame()
     {
-        GameIsActive = false;
+        GameManager.GameIsActive = false;
         startButton.SetActive(true);
         score.SetActive(false);
         timer.SetActive(false);
         stopButton.SetActive(false);
+        ScoreSystem.CurrentLevel = 1;
         Time.timeScale = 0f;
     }
 }
