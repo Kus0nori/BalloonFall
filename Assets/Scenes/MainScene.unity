@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 174400917}
   - component: {fileID: 174400919}
   - component: {fileID: 174400920}
+  - component: {fileID: 174400921}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -161,8 +162,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 174400916}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.24398237, y: 0.57038915, z: -0.0028905347}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.24398804, y: 0.57037354, z: -0.0028905347}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -196,6 +197,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e996abfe440ab5d4ab4302957ca46f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &174400921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174400916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2eb202b1311a8342af7676f3f8a7eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballTexture: []
 --- !u!1 &282203071
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,7 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc6c6875230e874ba8e7b3b0e8fd88a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balloonPrefab: {fileID: 3092914949760929478, guid: e8eb9ea4fe6bf454eae34939cef6c4ec, type: 3}
+  balloonPrefab: {fileID: 1074039444425986114, guid: b4070294e5114a24aadd43a8803534dd, type: 3}
 --- !u!4 &570890254
 Transform:
   m_ObjectHideFlags: 0
@@ -1691,6 +1705,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 145.56, y: 25.253479}
+  m_AnchoredPosition: {x: 145.56, y: 25.253418}
   m_SizeDelta: {x: 263.35, y: 50.5069}
   m_Pivot: {x: 0.5, y: 0.5}

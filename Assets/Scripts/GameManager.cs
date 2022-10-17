@@ -3,7 +3,6 @@ public class GameManager : MonoBehaviour
 {
     public static Vector3 ScreenBounds;
     public static bool GameIsActive;
-
     private void Awake()
     {
         Time.timeScale = 0f;

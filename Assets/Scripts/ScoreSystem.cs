@@ -10,9 +10,11 @@ public class ScoreSystem : MonoBehaviour
     private int _scoreForNewLevel;
     public Text levelNumber;
     public GameObject newLevelPanel;
+    private TextureGenerator _textureGenerator;
     private void Awake()
     {
         ResetScore();
+        _textureGenerator = GameObject.Find("GameManager").GetComponent<TextureGenerator>();
     }
 
     private void Update()
@@ -38,6 +40,7 @@ public class ScoreSystem : MonoBehaviour
         levelNumber.text = CurrentLevel.ToString();
         _scoreForNewLevel += 1000;
         StartCoroutine(NewLevelMessage());
+        _textureGenerator.GenerateTextureSet();
     }
 
     private IEnumerator NewLevelMessage()
