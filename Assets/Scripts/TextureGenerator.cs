@@ -60,7 +60,6 @@ public class TextureGenerator : MonoBehaviour
         ballTexture[2].Apply();
         ballTexture[3].SetPixels(_pixelArray256);
         ballTexture[3].Apply();
-        Debug.Log("Applied!");
     }
     private void GeneratePixelArray()
     {
