@@ -34,4 +34,4 @@ Game backgrounds are placed in AssetBundles on my github and loaded during game 
  
 The color of the circles will now be set by the textures that are generated at the start of the game, as well 
 as when changing levels. The size and color of the texture are subject to generation. Valid extensions are 32x32, 64x64, 128x128 and 256x256. 
-Textures with larger expansion are assigned to larger circles and vice versa.
+Textures with larger extention are assigned to larger circles and vice versa.
