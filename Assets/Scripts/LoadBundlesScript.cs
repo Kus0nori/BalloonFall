@@ -4,23 +4,30 @@ using UnityEngine;
 public class LoadBundlesScript : MonoBehaviour
 {
     private string _bundleURL;
-    private int _version = 1;
+    private int _version = 0;
     public GameObject backgroundManagerObject;
     private BackgroundManager _backgroundManager;
     private string[] _backgroundNames;
 
     private void Awake()
     {
-        _bundleURL = Application.platform switch
+        Debug.Log("Current platform: " + Application.platform);
+        switch (Application.platform)
         {
-            RuntimePlatform.WindowsPlayer =>
-                "https://github.com/Kus0nori/BalloonFall/blob/master/Assets/AssetBundles/Windows/content/backgrounds.unity3d?raw=true",
-            RuntimePlatform.Android =>
-                "https://github.com/Kus0nori/BalloonFall/blob/master/Assets/AssetBundles/Android/content/backgrounds.unity3d?raw=true",
-            RuntimePlatform.IPhonePlayer =>
-                "https://github.com/Kus0nori/BalloonFall/blob/master/Assets/AssetBundles/iOS/content/backgrounds.unity3d?raw=true",
-            _ => _bundleURL
-        };
+            case RuntimePlatform.WindowsPlayer:
+            case RuntimePlatform.WindowsEditor:
+                _bundleURL =
+                    "https://github.com/Kus0nori/BalloonFall/blob/master/Assets/AssetBundles/Windows/content/backgrounds.unity3d?raw=true";
+                break;
+            case RuntimePlatform.Android:
+                _bundleURL =
+                    "https://github.com/Kus0nori/BalloonFall/blob/master/Assets/AssetBundles/Android/content/backgrounds.unity3d?raw=true";
+                break;
+            case RuntimePlatform.IPhonePlayer:
+                _bundleURL =
+                    "https://github.com/Kus0nori/BalloonFall/blob/master/Assets/AssetBundles/iOS/content/backgrounds.unity3d?raw=true";
+                break;
+        }
 
         _backgroundManager = backgroundManagerObject.GetComponent<BackgroundManager>();
         _backgroundNames = new [] {"snowymountains.png", "foggy.png", "cityskyline.png", "bluemoon.png", "sunnyday.png", "graveyard.png"};
@@ -31,7 +38,7 @@ public class LoadBundlesScript : MonoBehaviour
     {
         while (!Caching.ready)
             yield return null;
-        var www = new WWW(_bundleURL);
+        var www = WWW.LoadFromCacheOrDownload(_bundleURL, _version);
         yield return www;
 
         if (!string.IsNullOrEmpty(www.error))
